@@ -1,5 +1,4 @@
-<h1 align="center">InvitePro :envelope: <svg xmlns="http://www.w3.org/2000/svg" class="octicon octicon-package" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M5.5 5H3.5c-.3 0-.5.2-.5.5v3c0 .3.2.5.5.5h2c.3 0 .5-.2.5-.5V5.5c0-.3-.2-.5-.5-.5zm0-1C6.3 4 7 4.7 7 5.5v3c0 .8-.7 1.5-1.5 1.5h-2C3.7 10 3 9.3 3 8.5v-3C3 4.7 3.7 4 4.5 4h1zm8.2 2.2l-2-2C11.4 4.1 11.2 4 11 4H8v3c0 .3.2.5.5.5h3c.2 0 .4-.1.5-.2l2-2c.1-.1.2-.3.2-.5 0-.2-.1-.4-.2-.5zM13 11.5c0-.8-.7-1.5-1.5-1.5h-3c-.3 0-.5.2-.5.5v3c0 .2.1.4.2.5l2 2c.1.1.3.2.5.2.2 0 .4-.1.5-.2.1-.1.2-.3.2-.5v-3.1h.8c.3 0 .5-.2.5-.5v-1.3h.5c.3 0 .5-.2.5-.5v-1z"/></svg>
-</h1>
+<h1 align="center">InvitePro :envelope::gun:</h1>
 <h4 align="center">Sistema de gerenciamento de Convites para Eventos com finalidade de estudo e treinamento de sistemas.</h4>
 
 ![imagem](https://img.shields.io/badge/-Javascript-yellow) ![imagem](https://img.shields.io/badge/-NodeJS-green) ![imagem](https://img.shields.io/badge/-Handlebars-orange) ![imagem](https://img.shields.io/badge/-Express-black) ![imagem](https://img.shields.io/badge/-MongoBD-gray)
