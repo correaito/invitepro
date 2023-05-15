@@ -1,0 +1,48 @@
+<div class="container col-md-5">
+  <div class="card bg-dark mb-3">
+  <div class="card-header" style="color: white">
+   Cadastrar Evento
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+       <form method="post" action="/admin/grava_evento">
+         <div class="form-group">
+          <label for="data">Tipo</label>
+          <select name="tipoevento" id="" class="form-control" required>
+            <option selected disabled>Selecione uma opção</option>
+            {{#each tipoevento}}
+            <option value="{{nome}}">{{nome}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="data">Data</label>
+          <input type="date" class="form-control" id="data" name="data" required>
+        </div>
+        <div class="form-group">
+          <label for="horario">Horário início</label>
+          <input type="time" class="form-control" id="horario_inicio" name="horario_inicio" required>
+        </div>
+        <div class="form-group">
+          <label for="horario">Horário término</label>
+          <input type="time" class="form-control" id="horario_termino" name="horario_termino" required>
+        </div>
+        <div class="form-group">
+          <label for="descricao">Descrição Evento</label>
+          <textarea class="form-control" id="descricao" name="descricao" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="local">Local</label>
+          <select class="form-control" id="local" name="local" required>
+            <option value="" selected disabled>Selecione um local</option>
+            {{#each locais}}
+             <option value="{{nome}}">{{nome}}</option>
+             {{/each}}
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+      </form>
+       </li>
+    </ul>
+  </div>
+</div>

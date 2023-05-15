@@ -1,0 +1,19 @@
+<div class="container col-md-5">
+
+  <div class="card bg-dark mb-3">
+  <div class="card-header" style="color: white">
+   Cadastro de Nucleos
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+          <form action="/admin/cadastra_nucleo" method="post">
+            <label for="">Nome</label>            
+            <input name="nome" type="text" id="nome" class="form-control mb-1" required/>
+            <label for="">Slug</label>
+            <input name="slug" type="text" id="slug" class="form-control mb-1" required/>
+           <button class="btn btn-primary mt-3 mb-2" type="submit">Gravar</button>
+          </form>
+       </li>
+    </ul>
+  </div>
+</div>

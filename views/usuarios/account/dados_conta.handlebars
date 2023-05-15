@@ -1,0 +1,36 @@
+<div class="container col-md-5">
+
+<div class="card bg-dark mb-3">
+  <div class="card-header" style="color: white">
+   Dados da Conta de Usuário
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+
+	<form action="/usuarios/altera_cadastro/{{id}}" method="post">
+		<div class="form-group">
+			<label for="numero">Nome</label>
+			<input type="text" name="nome" class="form-control" value="{{nome}}" autofocus>
+			  <input type="hidden" name="_method" value="PUT">
+  			  <input type="hidden" name="_csrf" value="{{csrfToken}}">
+		</div>
+		<div class="form-group">
+			<label for="numero">Email</label>
+			<input type="email" name="email" class="form-control" value="{{email}}">
+		</div>
+		<div class="form-group">
+			<label for="numero">Núcleo</label>
+			<input type="text" name="nucleo" class="form-control" value="{{nucleo}}">
+		</div>
+		<a href="/usuarios/altera_senha"><button type="button" class="btn btn-primary"><i class="fa-solid fa-lock"></i> Alterar senha</button></a>
+		<button type="submit" class="btn btn-success"><i class="fa-regular fa-floppy-disk"></i> Gravar</button>
+	</form>
+</div>
+
+</li>
+  </ul>
+</div>
+
+
+
+

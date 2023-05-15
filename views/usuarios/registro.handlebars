@@ -1,0 +1,39 @@
+{{#each erros}}
+  <div class="alert alert-danger">{{texto}}</div>
+{{else}}
+{{/each}}
+
+<div class="container col-md-5">
+<div class="card bg-dark mb-3">
+  <div class="card-header" style="color: white">
+   Registro do Sistema
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+
+    <form action="" method="post">
+      <label for="nome">Nome Completo: </label>
+      <input type="text" name="nome" class="form-control" required />
+
+      <label for="email">Email: </label> 
+      <input type="text" name="email" class="form-control" required />
+
+      <label for="nucleo">Núcleo: </label>
+      <select name="nucleo" id="nucleo" class="form-control" required>
+        <option value="" disabled selected>Selecione uma opção</option>
+        {{#each nucleos}}
+        <option value="{{nome}}">{{nome}}</option>
+        {{/each}}
+      </select> 
+
+      <label for="senha">Senha:</label>
+      <input type="password" name="senha" class="form-control" required />
+      <label for="senha2">Repita a sua senha: </label>
+      <input type="password" name="senha2" class="form-control" required />
+      <button type="submit" class="btn btn-success mt-3">Criar conta</button>
+    </form>
+    </div>
+
+    </li>
+  </ul>
+</div>

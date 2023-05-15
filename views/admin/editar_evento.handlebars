@@ -1,0 +1,60 @@
+<div class="container col-md-5">
+  <div class="card bg-dark mb-3">
+  <div class="card-header" style="color: white">
+   Editar Evento
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+       <form method="post" action="/admin/atualizar_evento">
+         <div class="form-group">
+          <label for="data">Tipo</label>
+          <select name="tipoevento" id="" class="form-control" >
+           {{#each tipos_eventos_bd}}
+          <option value="{{nome}}" 
+			  	{{#ifId nome ../evento.tipo}} 
+			  	selected
+				 {{/ifId}}>
+			  	{{nome}}</option>
+			  	{{else}}
+				<option value="">Nenhum tipo registrado</option>
+				{{/each}}
+			</select>
+        </div>  
+        <div class="form-group">
+          <label for="data">Data</label>
+          <input type="text" class="form-control" id="data" name="data" value="{{evento.data}}"  >
+        </div>
+        <div class="form-group">
+          <label for="horario">Horário início</label>
+          <input type="text" class="form-control" id="horario_inicio" name="horario_inicio" value="{{evento.horarioinicio}}"  >
+        </div>
+        <div class="form-group">
+          <label for="horario">Horário término</label>
+          <input type="text" class="form-control" id="horario_termino" name="horario_termino" value="{{evento.horariotermino}}"  >
+        </div>
+        <div class="form-group">
+          <label for="descricao">Descrição Evento</label>
+          <textarea class="form-control" id="descricao" name="descricao" >{{evento.descricao}}</textarea>
+        </div>
+        <div class="form-group">
+          <label for="local">Local</label>
+          <select class="form-control" id="local" name="local"  >
+        	{{#each locais_bd}}
+          <option value="{{nome}}" 
+			  	{{#ifId nome ../evento.local}} 
+			  	selected
+				 {{/ifId}}>
+			  	{{nome}}</option>
+			  	{{else}}
+				<option value="">Nenhum tipo registrado</option>
+				{{/each}}
+			</select>
+        </div>
+        <input type="hidden" class="form-control" id="horario_termino" name="id_evento" value="{{evento._id}}">
+        <button type="button" onclick="goBack()" class="btn btn-primary">Voltar</button>
+        <button type="submit" class="btn btn-success">Atualizar</button>
+      </form>
+       </li>
+    </ul>
+  </div> 
+</div>

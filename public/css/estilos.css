@@ -1,0 +1,27 @@
+.dropdown-submenu .dropdown-menu {
+    visibility: hidden;
+  }
+  
+
+.dropdown-submenu:hover .dropdown-menu-subitem {
+    position: absolute;
+    visibility: visible;
+    left: 100%;
+    top: 0;
+    margin: 0;
+}
+
+.dropdown-menu-subitem {
+    z-index: 2000;
+}
+
+@media (max-width: 768px) {
+  .dropdown-submenu:hover .dropdown-menu-subitem {
+    position: static;
+    visibility: visible;
+  }
+}
+
+.dropdown-menu a:hover {
+  background-color: #f0f0f0;
+}

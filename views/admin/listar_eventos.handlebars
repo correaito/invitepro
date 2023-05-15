@@ -1,0 +1,51 @@
+  <table class="table table-hover mt-3 mb-2 display" id="tabela-eventos" style="margin-top: 100px;">
+    <thead class="table-dark">
+      <tr>
+        <th>Tipo</th>
+        <th>Data</th>
+        <th>Horário Início</th>
+        <th>Horário Término</th>
+        <th style="display:none">Descrição Longa</th>
+        <th>Descrição</th>
+        <th>Local</th>
+        {{#if isAdmin}}
+        <th></th>
+        <th></th>
+        <th></th>
+        {{else}}
+        <th></th>
+        {{/if}}
+      </tr>
+    </thead>
+    <tbody>
+    {{#if isAdmin}}
+      {{#each eventos}}
+        <tr>
+          <td>{{tipo}}</td>
+          <td>{{data}}</td> 
+          <td>{{horarioinicio}}</td>
+          <td>{{horariotermino}}</td>
+          <td style="display:none">{{descricao}}</td>
+          <td title="{{descricao}}">{{descricao}}</td>
+          <td>{{local}}</td>
+          <td><a href="/usuarios/consultar_evento/{{_id}}"><i class="fa-solid fa-magnifying-glass"></i></a></td> 
+          <td><a href="/admin/editar_evento/{{_id}}"><i title="Editar" class="fa-regular fa-pen-to-square"></i></a></td>
+          <td><a href="/admin/excluir_evento/{{_id}}" title="Excluir"><i class="fa-solid fa-trash-can"></i></a></td>
+        </tr>
+          {{/each}}
+        {{else}}
+         {{#each eventos}}
+        <tr>
+          <td>{{tipo}}</td>
+          <td>{{data}}</td> 
+          <td>{{horarioinicio}}</td>
+          <td>{{horariotermino}}</td>
+          <td style="display:none">{{descricao}}</td>
+          <td title="{{descricao}}">{{descricao}}</td>
+          <td>{{local}}</td>
+          <td><a href="/usuarios/consultar_evento/{{_id}}"><i class="fa-solid fa-magnifying-glass"></i></a></td> 
+        </tr>
+        {{/each}}
+        {{/if}}
+    </tbody>
+  </table>

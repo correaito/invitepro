@@ -1,0 +1,30 @@
+  <table class="table table-hover mt-3 mb-2 display" id="tabela-eventos" style="margin-top: 100px;">
+    <thead class="table-dark">
+      <tr>
+        <th>Tipo</th>
+        <th>Data</th>
+        <th>Horário Início</th>
+        <th>Horário Término</th>
+        <th style="display:none"></th>
+        <th>Descrição</th>
+        <th>Local</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each usuario_convite}}
+        <tr>
+          <td>{{evento.tipo}}</td>
+          <td>{{evento.data}}</td> 
+          <td>{{evento.horarioinicio}}</td>
+          <td>{{evento.horariotermino}}</td>
+          <td style="display:none">{{evento.descricao}}</td>
+          <td>{{evento.descricao}}</td>
+          <td>{{evento.local}}</td>
+          <td><a href="/usuarios/consultar_evento/{{evento._id}}"><i class="fa-solid fa-magnifying-glass"></i></a></td>
+          <td><a href="/usuarios/imprime_convite/{{_id}}"><i class="fa-solid fa-print"></i></a></td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>

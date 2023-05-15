@@ -1,0 +1,30 @@
+<div class="container col-md-5">
+
+<div class="card bg-dark mb-3">
+  <div class="card-header" style="color: white">
+   Alteração da senha do Usuário
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+
+
+<form method="POST" action="/usuarios/alterar_senha">
+  <div class="form-group">
+    <label for="senhaAtual">Senha atual</label>
+    <input type="password" class="form-control" id="senhaAtual" name="senhaAtual" required>
+  </div>
+  <div class="form-group">
+    <label for="novaSenha">Nova senha</label>
+    <input type="password" class="form-control" id="novaSenha" name="novaSenha" required>
+  </div>
+  <div class="form-group">
+    <label for="confirmacaoSenha">Confirme a nova senha</label>
+    <input type="password" class="form-control" id="confirmacaoSenha" name="confirmacaoSenha" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Alterar senha</button>
+</form>
+
+</li>
+  </ul>
+</div>
+

@@ -1,0 +1,53 @@
+<div class="container col-md-5">
+
+  <div class="card bg-dark mb-3">
+  <div class="card-header" style="color: white">
+   Alterar Nível Acesso do Usuário
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+
+          <form action="/admin/alterar_usuario" method="post">
+
+            <label for="">Nome do usuário</label>
+            <input name="nome" type="text" id="nome" class="form-control mb-1" list="nomes-usuarios" required/>
+
+             <label for="">Nível</label>
+             <select name="nivel" class="form-control" id="">
+              <option disabled value="" selected>Selecione uma opção</option>
+              <option value="0">Usuário</option>
+              <option value="1">Administrador</option>
+             </select>
+
+           <button class="btn btn-primary mt-3 mb-2" type="submit">Gravar</button>
+
+          </form>
+       </li>
+    </ul>
+  </div>
+</div>
+
+<script>
+const nomeInput = document.getElementById("nome");
+const nomeList = document.createElement("datalist");
+nomeList.id = "nomes-usuarios";
+nomeInput.parentNode.insertBefore(nomeList, nomeInput.nextSibling);
+
+nomeInput.addEventListener("keyup", () => {
+  const nome = nomeInput.value;
+  if (nome.length >= 3) {
+    fetch(`/admin/usuarios/${nome}`)
+      .then(response => response.json())
+      .then(nomesUsuarios => {
+        nomeList.innerHTML = "";
+        nomesUsuarios.forEach(nomeUsuario => {
+          const option = document.createElement("option");
+          option.value = nomeUsuario;
+          nomeList.appendChild(option);
+        });
+      });
+  } else {
+    nomeList.innerHTML = "";
+  }
+});
+</script>

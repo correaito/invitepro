@@ -1,0 +1,48 @@
+<div class="container col-md-5">
+  <div class="card bg-dark mb-3">
+  <div class="card-header" style="color: white">
+   Solicitar convite
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+       <form method="post" action="/usuarios/grava_solicitacao_convite">
+         <div class="form-group">
+          <label for="data">Tipo</label>
+          <select name="tipoevento" id="" class="form-control" disabled>
+            <option value="{{evento.tipo}}">{{evento.tipo}}</option>
+          </select>
+        </div>  
+        <div class="form-group">
+          <label for="data">Data</label>
+          <input type="text" class="form-control" id="data" name="data" value="{{evento.data}}" disabled >
+        </div>
+        <div class="form-group">
+          <label for="horario">Horário início</label>
+          <input type="text" class="form-control" id="horario_inicio" name="horario_inicio" value="{{evento.horarioinicio}}"  disabled>
+        </div>
+        <div class="form-group">
+          <label for="horario">Horário término</label>
+          <input type="text" class="form-control" id="horario_termino" name="horario_termino" value="{{evento.horariotermino}}" disabled >
+        </div>
+        <div class="form-group">
+          <label for="descricao">Descrição Evento</label>
+          <textarea class="form-control" id="descricao" name="descricao" disabled>{{evento.descricao}}</textarea>
+        </div>
+        <div class="form-group">
+          <label for="local">Local</label>
+          <select class="form-control" id="local" name="local" disabled >
+             <option value="{{evento.local}}">{{evento.local}}</option>
+          </select>
+        </div>
+        <input type="hidden" class="form-control" id="horario_termino" name="id_evento" value="{{evento._id}}">
+        {{#if disable_btn_rqt}}
+        <button type="button" class="btn btn-outline-secondary">Convite Solicitado</button>
+        <a href="/usuarios/desistir_convite/{{evento._id}}"><button type="button" class="btn btn-danger">Desistir Convite</button></a>
+        {{else}}
+        <button type="submit" class="btn btn-primary">Solicitar convite</button>
+        {{/if}}
+      </form>
+       </li>
+    </ul>
+  </div> 
+</div>
